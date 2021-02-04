@@ -21,3 +21,5 @@
 4. Migrate and deploy to heroku.
 5. Issue with the migration to heroku that was taken care of. 
 6. Made the cards page the root. 
+7. Just realized I should store the charges when I get to allowing charges, so I am thinking it should probably be a different table with shared id column. 
+8. I have a crud 
