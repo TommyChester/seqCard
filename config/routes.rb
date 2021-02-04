@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :charges
   # Since we are not really adding a lot the functionality and only looking at cards then I am going to leave this as base.
   root   "card#index"
   resources :cards
