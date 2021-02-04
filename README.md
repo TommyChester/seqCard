@@ -19,3 +19,5 @@
 2. Switched to Posgres since I knew Sqlite3 (for a database) was not going to work on heroku (prior experience).
 3. Scaffold out card .
 4. Migrate and deploy to heroku.
+5. Issue with the migration to heroku that was taken care of. 
+6. Made the cards page the root. 
