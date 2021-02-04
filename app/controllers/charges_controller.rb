@@ -1,6 +1,7 @@
 class ChargesController < ApplicationController
   before_action :set_charge, only: %i[ show edit update destroy ]
 
+
   # GET /charges or /charges.json
   def index
     @charges = Charge.all
@@ -21,6 +22,8 @@ class ChargesController < ApplicationController
 
   # POST /charges or /charges.json
   def create
+    puts "asdfasdfasdfasdfasdfasdf"
+    puts charge_params
     @charge = Charge.new(charge_params)
 
     respond_to do |format|
@@ -62,8 +65,9 @@ class ChargesController < ApplicationController
       @charge = Charge.find(params[:id])
     end
 
+
     # Only allow a list of trusted parameters through.
     def charge_params
-      params.fetch(:charge, {})
+      params.require(:charge).permit(:card_id)
     end
 end

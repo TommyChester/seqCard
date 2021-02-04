@@ -21,6 +21,7 @@ class CardsController < ApplicationController
 
   # POST /cards or /cards.json
   def create
+    puts card_params
     @card = Card.new(card_params)
 
     respond_to do |format|
@@ -64,6 +65,7 @@ class CardsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def card_params
-      params.require(:card).permit(:limit, :balanace)
+      params.require(:card).permit(:card)
+
     end
 end
