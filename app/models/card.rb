@@ -30,6 +30,9 @@ class Card < ApplicationRecord
         true
     end
 
-    
+    def available_balance
+        update_balance if charges_are_older?
+        self.limit - self.balance
+    end
 
 end

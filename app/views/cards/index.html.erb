@@ -15,10 +15,10 @@
     <% @cards.each do |card| %>
       <tr>
         <td><%= card.limit %></td>
-        <td><%= card.balanace %></td>
+        <td><%= card.balance %></td>
         <td><%= link_to 'Show', card %></td>
         <td><%= link_to 'Edit', edit_card_path(card) %></td>
-        <td><%= link_to 'Destroy', card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Create', create_charge_path() %></td>
       </tr>
     <% end %>
   </tbody>
