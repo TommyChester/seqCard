@@ -7,6 +7,7 @@
 1. My goal is to make a deliverable product, I would rather a working product that does very little than a sketchy product that is feature rich. With that said I am building for heroku. 
 2. It is almost always best to use what others have built if at all possible (particularly if it is either wwidely open source and checked or backed by SLA). With that said I rails new and rails -g scaffolds to build out. 
 3. Though I believe that a front end is super important, I am going to start with entirely functionality before moving onto design. Though this is not the ideal workflow from true business perspective for the purposes of showing my skills I am going to start with this. 
+4. The balance should say the same unless there is change in charges, so I am storing a value that gets updated based on the update time of the charge. 
 
 
 ##Future Ideas
@@ -22,4 +23,5 @@
 5. Issue with the migration to heroku that was taken care of. 
 6. Made the cards page the root. 
 7. Just realized I should store the charges when I get to allowing charges, so I am thinking it should probably be a different table with shared id column. 
-8. I have a crud 
+8. I have a crud on charges without value but tied to cards. 
+9. Made Card default balance zero, could have been null.
