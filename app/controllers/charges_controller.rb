@@ -14,6 +14,7 @@ class ChargesController < ApplicationController
   # GET /charges/new
   def new
     @charge = Charge.new
+    @carge.null_to_zero_balance.save!
   end
 
   # GET /charges/1/edit
@@ -22,8 +23,7 @@ class ChargesController < ApplicationController
 
   # POST /charges or /charges.json
   def create
-    puts "asdfasdfasdfasdfasdfasdf"
-    puts charge_params
+
     @charge = Charge.new(charge_params)
 
     respond_to do |format|
@@ -68,6 +68,6 @@ class ChargesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def charge_params
-      params.require(:charge).permit(:card_id)
+      params.require(:charge).permit(:card_id,:value)
     end
 end
