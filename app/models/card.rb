@@ -20,4 +20,16 @@ class Card < ApplicationRecord
         self.balance += self.charges.where("updated_at > ?", self.updated_at).sum(:value)
         self.save!
     end
+
+    #Now I really struggle with whether to update the balance before
+    #checking, but I know that I can on my card run transactions over
+    #limit in a short period of time (i've done it). So for realism I
+    #did not. 
+    def limit_reached?
+        return false unless self.balance >= self.limit
+        true
+    end
+
+    
+
 end

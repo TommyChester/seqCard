@@ -14,7 +14,6 @@ class ChargesController < ApplicationController
   # GET /charges/new
   def new
     @charge = Charge.new
-    @carge.null_to_zero_balance.save!
   end
 
   # GET /charges/1/edit
@@ -25,7 +24,7 @@ class ChargesController < ApplicationController
   def create
 
     @charge = Charge.new(charge_params)
-
+    
     respond_to do |format|
       if @charge.save
         format.html { redirect_to @charge, notice: "Charge was successfully created." }
