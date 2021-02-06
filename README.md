@@ -8,6 +8,7 @@
 2. It is almost always best to use what others have built if at all possible (particularly if it is either wwidely open source and checked or backed by SLA). With that said I rails new and rails -g scaffolds to build out. 
 3. Though I believe that a front end is super important, I am going to start with entirely functionality before moving onto design. Though this is not the ideal workflow from true business perspective for the purposes of showing my skills I am going to start with this. 
 4. The balance should say the same unless there is change in charges, so I am storing a value that gets updated based on the update time of the charge. 
+5. I want a stood up front end without needing to injest json (I could do that later), so I am going to make multiple routes, one for html one for json. That means within my structure I am going to have 6 Routes for now. 
 
 
 ##Future Ideas

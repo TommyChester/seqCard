@@ -1,6 +1,9 @@
 class Card < ApplicationRecord
     has_many :charges
 
+    
+    def 
+
     #just allow for all charges rather than 
     def all_charge_value
         self.charges.sum(:value)

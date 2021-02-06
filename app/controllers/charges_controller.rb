@@ -1,4 +1,5 @@
 class ChargesController < ApplicationController
+  skip_before_action :verify_authenticity_token
   before_action :set_charge, only: %i[ show edit update destroy ]
 
 
@@ -23,17 +24,32 @@ class ChargesController < ApplicationController
 
   # POST /charges or /charges.json
   def create
-
     @charge = Charge.new(charge_params)
     
     respond_to do |format|
-      puts "AASDASDASDASDASDASDASDASDASDASDASDASDASDASDASD"
-      puts @charge.charge_over_limit?
-      puts "asdf;lkajsdf;lkajsdf;lkajsd;lfkjasdf"
       if @charge.charge_over_limit? 
         notice_val = "Charge goes over the limit. Available balance is: " + @charge.card.available_balance.to_s 
         format.html { redirect_to @charge, notice: notice_val }
         msg = { :id => @charge.card.id, :error => "Insufficient Balance on Card", :available_balance => @charge.card.available_balance}
+        format.json { render :json => msg}
+      elsif @charge.save
+        format.html { redirect_to @charge, notice: "Charge was successfully created." }
+        format.json { render :show, status: :created, location: @charge }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @charge.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # POST /charges/create or /charge/create
+  def create_json
+    @charge = Charge.new(:card_id => params["charge"]["id"], :value => params["charge"]["value"])
+    respond_to do |format|
+      if params["charge"]["id"].nil? 
+        msg = {:error => "Please fill out both the Card ID an the Value of the charge."}
+      elsif @charge.charge_over_limit? 
+        msg = { :id => @charge.card_id, :error => "Insufficient Balance on Card", :available_balance => @charge.card.available_balance}
         format.json { render :json => msg}
       elsif @charge.save
         format.html { redirect_to @charge, notice: "Charge was successfully created." }
@@ -78,6 +94,6 @@ class ChargesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def charge_params
-      params.require(:charge).permit(:card_id,:value)
+      params.require(:charge).permit(:id,:value)
     end
 end
