@@ -94,6 +94,6 @@ class ChargesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def charge_params
-    params.require(:charge).permit(:id, :value)
+    params.require(:charge).permit(:card_id, :value)
   end
 end

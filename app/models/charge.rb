@@ -3,9 +3,9 @@
 class Charge < ApplicationRecord
   belongs_to :card
   validates :card, presence: true
-  validates :card, numericality: { only_integer: true }
 
   def card
+    puts "!!!!!!!!!!!!!!", self.card_id, "!!!!!!!!!!!!"
     Card.find(card_id)
   end
 

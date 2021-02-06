@@ -13,6 +13,7 @@
 
 ##Future Ideas
 1. I am not going to put a UUID on each card but in the future I would use a UUID that is actual primary key and use the ID as secondary key that would be the public displayed ID. 
+2. Add payments.
 
 #How to Launch
 
@@ -26,3 +27,5 @@
 7. Just realized I should store the charges when I get to allowing charges, so I am thinking it should probably be a different table with shared id column. 
 8. I have a crud on charges without value but tied to cards. 
 9. Made Card default balance zero, could have been null.
+10. I want to show charges on the card.
+11. I have a working version that is not pretty. I am going to put out how to get started on machine. 
