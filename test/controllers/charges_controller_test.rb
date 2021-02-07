@@ -17,13 +17,6 @@ class ChargesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test 'should create charge' do
-    assert_difference('Charge.count') do
-      post charges_url, params: { charge: {} }
-    end
-
-    assert_redirected_to charge_url(Charge.last)
-  end
 
   test 'should show charge' do
     get charge_url(@charge)
@@ -35,16 +28,7 @@ class ChargesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test 'should update charge' do
-    patch charge_url(@charge), params: { charge: {} }
-    assert_redirected_to charge_url(@charge)
-  end
 
-  test 'should destroy charge' do
-    assert_difference('Charge.count', -1) do
-      delete charge_url(@charge)
-    end
 
-    assert_redirected_to charges_url
-  end
+ 
 end

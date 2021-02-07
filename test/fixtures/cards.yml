@@ -2,8 +2,8 @@
 
 one:
   limit: 1.5
-  balanace: 1.5
+  balance: 1.5
 
 two:
   limit: 1.5
-  balanace: 1.5
+  balance: 1.5

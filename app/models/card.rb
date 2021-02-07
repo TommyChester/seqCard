@@ -3,11 +3,7 @@
 class Card < ApplicationRecord
   has_many :charges
 
-  def
-  # just allow for all charges rather than
-  def(_all_charge_value)
-    charges.sum(:value)
-  end
+ 
 
   # If the date of any charges are older than the updated_at then
   # we update the balance, however I could image updating balance

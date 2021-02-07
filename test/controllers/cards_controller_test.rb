@@ -19,7 +19,7 @@ class CardsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should create card' do
     assert_difference('Card.count') do
-      post cards_url, params: { card: { balanace: @card.balanace, limit: @card.limit } }
+      post cards_url, params: { card: { balance: @card.balance, limit: @card.limit } }
     end
 
     assert_redirected_to card_url(Card.last)
@@ -30,21 +30,5 @@ class CardsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test 'should get edit' do
-    get edit_card_url(@card)
-    assert_response :success
-  end
-
-  test 'should update card' do
-    patch card_url(@card), params: { card: { balanace: @card.balanace, limit: @card.limit } }
-    assert_redirected_to card_url(@card)
-  end
-
-  test 'should destroy card' do
-    assert_difference('Card.count', -1) do
-      delete card_url(@card)
-    end
-
-    assert_redirected_to cards_url
-  end
+ 
 end

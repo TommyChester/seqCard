@@ -16,7 +16,7 @@ class CardsTest < ApplicationSystemTestCase
     visit cards_url
     click_on 'New Card'
 
-    fill_in 'Balanace', with: @card.balanace
+    fill_in 'Balance', with: @card.balance
     fill_in 'Limit', with: @card.limit
     click_on 'Create Card'
 
@@ -28,7 +28,7 @@ class CardsTest < ApplicationSystemTestCase
     visit cards_url
     click_on 'Edit', match: :first
 
-    fill_in 'Balanace', with: @card.balanace
+    fill_in 'Balance', with: @card.balance
     fill_in 'Limit', with: @card.limit
     click_on 'Update Card'
 

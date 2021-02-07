@@ -17,8 +17,6 @@ class ChargesController < ApplicationController
     @charge = Charge.new
   end
 
-  # GET /charges/1/edit
-  def edit; end
 
   # POST /charges or /charges.json
   def create
